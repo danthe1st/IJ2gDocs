@@ -1,19 +1,22 @@
 <idea-plugin>
-    <id>com.github.danthe1st.ij2gdocs</id>
-    <name>IJ2GDocs</name>
-    <vendor>danthe1st</vendor>
+	<id>io.github.danthe1st.ij2gdocs</id>
+	<name>IJ2GDocs</name>
+	<vendor>dan1st</vendor>
 
-    <!-- Product and plugin compatibility requirements -->
-    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
-    <depends>com.intellij.modules.platform</depends>
+	<!-- Product and plugin compatibility requirements -->
+	<!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+	<depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.danthe1st.ij2gdocs.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.danthe1st.ij2gdocs.services.MyProjectService"/>
-    </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.danthe1st.ij2gdocs.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+	<actions>
+		<action class="io.github.danthe1st.ij2gdocs.actions.MainAction"
+				icon="IJ2GDocsIcons.mirrorIcon"
+				text="Mirror This File to a Google Document"
+				description="Configures this file to be mirrored to a Google document">
+			<add-to-group group-id="ToolsMenu"/>
+		</action>
+	</actions>
+	<extensionPoints>
+		<extensionPoint beanClass="io.github.danthe1st.ij2gdocs.actions.EditorHandler" name="editorHandler"/>
+	</extensionPoints>
 </idea-plugin>
