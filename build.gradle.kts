@@ -51,14 +51,11 @@ changelog {
 }
 
 tasks {
-    // Set the compatibility versions to 1.8
+    // Set the compatibility versions to 11
     withType<JavaCompile> {
-        sourceCompatibility = "1.8"
-        targetCompatibility = "1.8"
+        sourceCompatibility = "11"
+        targetCompatibility = "11"
     }
-    //withType<KotlinCompile> {
-    //    kotlinOptions.jvmTarget = "1.8"
-    //}
 
     //withType<Detekt> {
     //    jvmTarget = "1.8"
