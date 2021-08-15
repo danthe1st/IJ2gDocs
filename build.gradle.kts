@@ -20,7 +20,7 @@ repositories {
 }
 dependencies {
     implementation("com.google.api-client:google-api-client:1.32.1")
-    implementation("com.google.api-client:google-api-client-java6:1.31.5")
+    implementation("com.google.api-client:google-api-client-java6:1.32.1")
     implementation("com.google.api-client:google-api-client-gson:1.31.5")
     implementation("com.google.apis:google-api-services-docs:v1-rev20210707-1.32.1")
     implementation("com.google.http-client:google-http-client:1.39.2-sp.1")
