@@ -71,8 +71,11 @@ public final class EditorHandler implements DocumentListener {
 	@Override
 	public void documentChanged(@NotNull DocumentEvent event) {
 		if(document != null && document.equals(event.getDocument())) {
-			//TODO optimization: only change what needs to be changed
-			docsUploader.overwriteEverything(document.getText(), IOException::printStackTrace);
+			if(event.isWholeTextReplaced()||event.getMoveOffset()!=event.getOffset()){
+				docsUploader.overwriteEverything(document.getText(), IOException::printStackTrace);
+			}else{
+				docsUploader.overwritePart(document.getText().substring(event.getOffset(),event.getOffset()+event.getNewLength()),event.getOffset(),event.getOldLength(),document.getText(),IOException::printStackTrace);
+			}
 		}else{
 			event.getDocument().removeDocumentListener(this);
 		}
