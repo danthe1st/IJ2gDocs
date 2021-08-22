@@ -3,7 +3,6 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
-
 ### Added
 - Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
 
