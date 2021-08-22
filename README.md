@@ -1,7 +1,7 @@
 # IJ2GDocs
 ![Build](https://github.com/danthe1st/IJ2GDocs/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/io.github.danthe1st.ij2gdocs)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/io.github.danthe1st.ij2gdocs)
+[![Version](https://img.shields.io/jetbrains/plugin/v/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/17433-ij2gdocs)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/17433-ij2gdocs)
 
 <!-- Plugin description -->
 IJ2GDocs allows you to mirror a file opened in IntelliJ IDEA™ to Google Docs™.
