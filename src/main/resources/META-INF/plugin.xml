@@ -22,5 +22,6 @@
 		<applicationConfigurable instance="io.github.danthe1st.ij2gdocs.ui.SettingsConfigurable" id="ij2gdocs.settings"
 								 key="name" bundle="io.github.danthe1st.ij2gdocs.messages" nonDefaultProject="true"
 								 parentId="tools"/>
+		<notificationGroup displayType="BALLOON" id="ij2gDocs.notifs" key="name" bundle="io.github.danthe1st.ij2gdocs.messages"/>
 	</extensions>
 </idea-plugin>
