@@ -52,7 +52,7 @@ public class GoogleDocsUploaderFactory {
 
 	private Credential getCredential(GoogleAuthorizationCodeFlow flow, NetHttpTransport httpTransport,
 	                                 Details authDetails) throws IOException {
-		String accessToken = PropertiesComponent.getInstance().getValue("accessToken");
+		String accessToken = PropertiesComponent.getInstance().getValue("ij2gdocs.accessToken");
 		Credential cred;
 		if(accessToken == null) {
 			cred = new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
@@ -64,10 +64,10 @@ public class GoogleDocsUploaderFactory {
 					.setJsonFactory(JSON_FACTORY).setTransport(httpTransport)
 					.setClientAuthentication(new ClientParametersAuthentication(authDetails.getClientId(),
 							authDetails.getClientSecret()))
-					.setTokenServerEncodedUrl(PropertiesComponent.getInstance().getValue("tokenServerEncodedUrl")).build();
+					.setTokenServerEncodedUrl(PropertiesComponent.getInstance().getValue("ij2gdocs.tokenServerEncodedUrl")).build();
 			cred.setAccessToken(accessToken);
-			cred.setRefreshToken(PropertiesComponent.getInstance().getValue("refreshToken"));
-			String expirationTime = PropertiesComponent.getInstance().getValue("expirationTime");
+			cred.setRefreshToken(PropertiesComponent.getInstance().getValue("ij2gdocs.refreshToken"));
+			String expirationTime = PropertiesComponent.getInstance().getValue("ij2gdocs.expirationTime");
 			cred.setExpirationTimeMilliseconds(expirationTime == null ? null : Long.valueOf(expirationTime));
 		}
 		return cred;

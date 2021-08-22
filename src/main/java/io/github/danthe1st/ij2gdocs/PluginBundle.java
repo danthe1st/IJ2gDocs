@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.PropertyKey;
 
 public final class PluginBundle extends AbstractBundle {
-	private static final String BUNDLE = "messages.ij2gdocs";
+	private static final String BUNDLE = "io.github.danthe1st.ij2gdocs.messages";
 
 	private static final PluginBundle INSTANCE;
 

@@ -60,4 +60,15 @@ public class MainAction extends AnAction {
 		NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR)
 				.notify(project);
 	}
+
+	public void resetEditorHandler() {
+		if(editorHandler!=null){
+			try {
+				editorHandler.setDocument(null);
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		editorHandler=null;
+	}
 }

@@ -34,11 +34,6 @@ public class OAuthWaitDialog extends DialogWrapper {
 	}
 
 	@Override
-	protected void createDefaultActions() {
-		super.createDefaultActions();
-	}
-
-	@Override
 	protected Action @NotNull [] createActions() {
 		return new Action[]{myCancelAction};
 	}

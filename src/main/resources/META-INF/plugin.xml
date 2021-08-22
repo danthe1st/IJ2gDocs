@@ -6,17 +6,21 @@
 	<!-- Product and plugin compatibility requirements -->
 	<!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
 	<depends>com.intellij.modules.platform</depends>
-
-
 	<actions>
 		<action class="io.github.danthe1st.ij2gdocs.actions.MainAction"
 				icon="IJ2GDocsIcons.mirrorIcon"
 				text="Mirror This File to a Google Document"
-				description="Configures this file to be mirrored to a Google document">
+				description="Configures this file to be mirrored to a Google document"
+				id="ij2gDocs.mainAction">
 			<add-to-group group-id="ToolsMenu"/>
 		</action>
 	</actions>
 	<extensionPoints>
 		<extensionPoint beanClass="io.github.danthe1st.ij2gdocs.actions.EditorHandler" name="editorHandler"/>
 	</extensionPoints>
+	<extensions defaultExtensionNs="com.intellij">
+		<applicationConfigurable instance="io.github.danthe1st.ij2gdocs.ui.SettingsConfigurable" id="ij2gdocs.settings"
+								 key="name" bundle="io.github.danthe1st.ij2gdocs.messages" nonDefaultProject="true"
+								 parentId="tools"/>
+	</extensions>
 </idea-plugin>
