@@ -1,4 +1,4 @@
-package io.github.danthe1st.ij2gdocs.gdocs;
+package io.github.danthe1st.ide2gdocs.gdocs;
 
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.ClientParametersAuthentication;
@@ -12,7 +12,6 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.docs.v1.Docs;
 import com.google.api.services.docs.v1.DocsScopes;
 import com.intellij.ide.util.PropertiesComponent;
@@ -33,8 +32,10 @@ public class GoogleDocsUploaderFactory {
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
 	private final LocalServerReceiver receiver;
+	private final CredentialStorage credentialStorage;
 
-	public GoogleDocsUploaderFactory() {
+	public GoogleDocsUploaderFactory(CredentialStorage credentialStorage) {
+		this.credentialStorage = credentialStorage;
 		receiver = new LocalServerReceiver.Builder().setPort(8888).build();
 	}
 
@@ -53,41 +54,24 @@ public class GoogleDocsUploaderFactory {
 	private Credential getCredential(GoogleAuthorizationCodeFlow flow, NetHttpTransport httpTransport,
 	                                 Details authDetails) throws IOException {
 		String accessToken = PropertiesComponent.getInstance().getValue("ij2gdocs.accessToken");
-		Credential cred;
+		Credential cred=credentialStorage.loadCredential(new Credential.Builder(BearerToken.authorizationHeaderAccessMethod())
+				.setJsonFactory(JSON_FACTORY).setTransport(httpTransport)
+				.setClientAuthentication(new ClientParametersAuthentication(authDetails.getClientId(),
+						authDetails.getClientSecret())));
 		if(accessToken == null) {
 			cred = new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
-
-			saveCredential(cred);
-
-		} else {
-			cred = new Credential.Builder(BearerToken.authorizationHeaderAccessMethod())
-					.setJsonFactory(JSON_FACTORY).setTransport(httpTransport)
-					.setClientAuthentication(new ClientParametersAuthentication(authDetails.getClientId(),
-							authDetails.getClientSecret()))
-					.setTokenServerEncodedUrl(PropertiesComponent.getInstance().getValue("ij2gdocs.tokenServerEncodedUrl")).build();
-			cred.setAccessToken(accessToken);
-			cred.setRefreshToken(PropertiesComponent.getInstance().getValue("ij2gdocs.refreshToken"));
-			String expirationTime = PropertiesComponent.getInstance().getValue("ij2gdocs.expirationTime");
-			cred.setExpirationTimeMilliseconds(expirationTime == null ? null : Long.valueOf(expirationTime));
+			credentialStorage.saveCredential(cred);
 		}
 		return cred;
-	}
-
-	private static void saveCredential(Credential cred) {
-		PropertiesComponent.getInstance().setValue("ij2gdocs.tokenServerEncodedUrl", cred.getTokenServerEncodedUrl());
-		PropertiesComponent.getInstance().setValue("ij2gdocs.accessToken", cred.getAccessToken());
-		PropertiesComponent.getInstance().setValue("ij2gdocs.refreshToken", cred.getRefreshToken());
-		Long expirationTime = cred.getExpirationTimeMilliseconds();
-		PropertiesComponent.getInstance().setValue("ij2gdocs.expirationTime", expirationTime == null ? null : String.valueOf(expirationTime));
 	}
 
 	public void cancel() throws IOException {
 		receiver.stop();
 	}
 
-	public static Details loadGoogleOAuthCredentials() throws IOException {
+	public Details loadGoogleOAuthCredentials() throws IOException {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(
-				Objects.requireNonNull(GoogleDocsUploaderFactory.class.getResourceAsStream("credentials.txt")), StandardCharsets.UTF_8))) {
+				Objects.requireNonNull(credentialStorage.getClass().getResourceAsStream("credentials.txt")), StandardCharsets.UTF_8))) {
 			String clientId = br.readLine();
 			String clientSecret = br.readLine();
 			return GoogleDocsUploader.getCredentialDetails(clientId, clientSecret);

@@ -1,4 +1,4 @@
-package io.github.danthe1st.ij2gdocs.gdocs;
+package io.github.danthe1st.ide2gdocs.gdocs;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -3,8 +3,9 @@ package io.github.danthe1st.ij2gdocs.actions;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
-import io.github.danthe1st.ij2gdocs.gdocs.GoogleDocsUploader;
-import io.github.danthe1st.ij2gdocs.gdocs.GoogleDocsUploaderFactory;
+import io.github.danthe1st.ide2gdocs.gdocs.GoogleDocsUploader;
+import io.github.danthe1st.ide2gdocs.gdocs.GoogleDocsUploaderFactory;
+import io.github.danthe1st.ij2gdocs.gdocs.IJCredentialStorage;
 import io.github.danthe1st.ij2gdocs.ui.EnterDocumentIdDialog;
 import io.github.danthe1st.ij2gdocs.ui.OAuthWaitDialog;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,7 @@ public final class EditorHandler implements DocumentListener {
 
 	private static GoogleDocsUploader setupOAuth2()
 			throws IOException, GeneralSecurityException {
-		GoogleDocsUploaderFactory uploaderFactory = new GoogleDocsUploaderFactory();
+		GoogleDocsUploaderFactory uploaderFactory = new GoogleDocsUploaderFactory(new IJCredentialStorage());
 		UploaderHolder uploaderHolder = new UploaderHolder();
 		OAuthWaitDialog dlg = new OAuthWaitDialog();
 		Thread uploaderCreationThread = new Thread(() -> {
