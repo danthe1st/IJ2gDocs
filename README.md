@@ -50,7 +50,9 @@ git clone --recurse-submodules https://github.com/danthe1st/IJ2GDocs
 Alternatively, IDE2gDocs can be cloned directly from IntelliJ IDEA using the option `File`>`New`>`Project from Version Control`.
 
 ### Setup
-The plugin can be imported in IntelliJ IDEA as a Gradle project
+The plugin can be imported in IntelliJ IDEA as a Gradle project.
+
+This should automatically load run configurations.
 
 ## Privacy
 All data obtained by Eclipse2GDocs is kept locally and not shared with any third-party services.
