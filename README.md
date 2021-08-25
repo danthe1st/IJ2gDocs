@@ -34,6 +34,23 @@ IJ2GDocs allows you to mirror a file opened in IntelliJ IDEA™ to Google Docs�
   Download the [latest release](https://github.com/danthe1st/IJ2GDocs/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## Dev Setup
+### Required programs
+In order to develop this plugin, [IntelliJ IDEA](https://www.jetbrains.com/idea/) is required with a JDK set up.
+
+The [Gradle](https://plugins.jetbrains.com/plugin/13112-gradle) and [Plugin DevKit](https://plugins.jetbrains.com/docs/intellij/setting-up-environment.html#configuring-intellij-platform-sdk) plugins need to be installed and [enabled](https://www.jetbrains.com/help/idea/managing-plugins.html) (both plugins should be installed by default).
+
+### Download
+This repository uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for shared code.
+Because of this, the parameter `--recurse-submodules` is required when cloning the repository:
+```bash
+git clone --recurse-submodules https://github.com/danthe1st/IJ2GDocs
+```
+
+Alternatively, IDE2gDocs can be cloned directly from IntelliJ IDEA using the option `File`>`New`>`Project from Version Control`.
+
+### Setup
+The plugin can be imported in IntelliJ IDEA as a Gradle project
 
 ## Privacy
 All data obtained by Eclipse2GDocs is kept locally and not shared with any third-party services.

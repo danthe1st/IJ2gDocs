@@ -3,9 +3,11 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+### Changed
+- Using submodules for common Google API code
 ## [1.1.0]
 ### Added
-- Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)git
+- Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
 ### Changed
 - Only rewrite modified parts instead of the whole document (if possible)
 - Update dependencies
