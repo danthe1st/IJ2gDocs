@@ -54,11 +54,6 @@ The plugin can be imported in IntelliJ IDEA as a Gradle project.
 
 This should automatically load run configurations.
 
-## Privacy
-All data obtained by IJ2gDocs is kept locally and not shared with any third-party services.
-
-It uses the Google Docs API in order to write to a Google Document upon a users request.
-
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 

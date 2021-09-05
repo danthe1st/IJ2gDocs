@@ -5,6 +5,7 @@
 ## [Unreleased]
 ### Changed
 - Using submodules for common Google API code
+- Update dependencies
 ## [1.1.0]
 ### Added
 - Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
