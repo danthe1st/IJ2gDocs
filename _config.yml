@@ -1,0 +1,24 @@
+title: IJ2gDocs
+description: >- # this means to ignore newlines until "baseurl:"
+  Mirror a file opened in IntelliJ IDEA™ to Google Docs™
+baseurl: "/IJ2GDocs" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  danthe1st
+# Build settings
+markdown: kramdown
+remote_theme: pages-themes/architect@v0.2.0
+#theme: cayman
+
+docs_list_title: ACME Documentation
+docs:
+  - title: Introduction
+    url: introduction.html
+  - title: Configuration
+    url: configuration.html
+  - title: Deployment
+    url: deployment.html
+
+include:
+  - LICENSE.md.md
+  - privacy.md
+  - README.md

@@ -55,6 +55,5 @@ The plugin can be imported in IntelliJ IDEA as a Gradle project.
 This should automatically load run configurations.
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
+The project is licensed under [GNU GPL v3](LICENSE.md) and the Privacy Policy can be found [here](privacy.md).
