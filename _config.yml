@@ -9,16 +9,7 @@ markdown: kramdown
 remote_theme: pages-themes/architect@v0.2.0
 #theme: cayman
 
-docs_list_title: ACME Documentation
-docs:
-  - title: Introduction
-    url: introduction.html
-  - title: Configuration
-    url: configuration.html
-  - title: Deployment
-    url: deployment.html
-
 include:
-  - LICENSE.md.md
+  - LICENSE.md
   - privacy.md
   - README.md
