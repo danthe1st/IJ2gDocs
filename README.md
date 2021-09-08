@@ -1,4 +1,4 @@
-# IJ2GDocs
+# IJ2gDocs
 ![Build](https://github.com/danthe1st/IJ2GDocs/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/17433-ij2gdocs)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/io.github.danthe1st.ij2gdocs.svg)](https://plugins.jetbrains.com/plugin/17433-ij2gdocs)
