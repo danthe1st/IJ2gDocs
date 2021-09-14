@@ -11,3 +11,4 @@ include:
   - LICENSE.md
   - privacy.md
   - README.md
+  - src/main/resources/META-INF/pluginIcon.svg
