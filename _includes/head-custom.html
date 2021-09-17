@@ -23,9 +23,10 @@
 
         for (const link of document.getElementsByTagName("a")) {
             if (link.href?.startsWith(ytlinkPrefix)) {
-                const parent = link.parentElement;
-                if (parent.tagName === "p" && parent.previousSibling.tagName === "p") {
-                    parent.previousSibling.remove()
+                const parent = link.parentNode
+				const prev=parent?.previousElementSibling
+                if (parent?.tagName === "P" && prev?.tagName === "P") {
+                    prev.remove()
                     const videoFrame = createIframe({
                         width: "560",
                         height: "315",
@@ -35,7 +36,7 @@
                         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
                         allowfullscreen: ""
                     })
-                    parent.parentNode.replaceChild(parent.parentNode, videoFrame)
+                    link.replaceWith(videoFrame)
                 }
             }
         }
