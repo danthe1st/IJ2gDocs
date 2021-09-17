@@ -1,16 +1,47 @@
-<link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/34687786/133309656-47516faf-b620-4bf0-bb41-6dcc313a814b.png">
+<link rel="icon" type="image/x-icon"
+      href="https://user-images.githubusercontent.com/34687786/133309656-47516faf-b620-4bf0-bb41-6dcc313a814b.png">
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const instFrame=document.createElement("iframe");
-        instFrame.setAttribute("frameborder","none");
-        instFrame.setAttribute("width","245px");
-        instFrame.setAttribute("height","48px");
-        instFrame.setAttribute("src","https://plugins.jetbrains.com/embeddable/install/17433");
-        instFrame.style.marginLeft="5px";
+    const createIframe = (attribs) => {
+        const ret = document.createElement("iframe");
+        for (const name in attribs) {
+            ret.setAttrib(name, attribs[name])
+        }
+        return ret
+    }
+    const loadJetBrainsButton = () => {
+        const instFrame = createIframe({
+            frameborder: "none",
+            width: "245px",
+            height: "48px",
+            src: "https://plugins.jetbrains.com/embeddable/install/17433"
+        })
+        instFrame.style.marginLeft = "5px";
         document.getElementsByTagName("h1")[0].appendChild(instFrame);
+    }
+    const replaceVideos = () => {
+        const ytlinkPrefix = "https://www.youtube.com/watch?v="
 
-    },false);
-
-
-
+        for (const link of document.getElementsByTagName("a")) {
+            if (link.href?.startsWith(ytlinkPrefix)) {
+                const parent = link.parentElement;
+                if (parent.tagName === "p" && parent.previousSibling.tagName === "p") {
+                    parent.previousSibling.remove()
+                    const videoFrame = createIframe({
+                        width: "560",
+                        height: "315",
+                        src: "https://www.youtube.com/embed/"+link.href.substr(ytlinkPrefix.length),
+                        title: "YouTube video player",
+                        frameborder: "0",
+                        allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                        allowfullscreen: ""
+                    })
+                    parent.parentNode.replaceChild(parent.parentNode, videoFrame)
+                }
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        loadJetBrainsButton()
+        replaceVideos()
+    }, false);
 </script>

@@ -6,7 +6,10 @@
 <!-- Plugin description -->
 IJ2GDocs allows you to mirror a file opened in IntelliJ IDEA™ to Google Docs™.
 
-![2021-08-15 11-45-01](https://user-images.githubusercontent.com/34687786/129474396-1dfba440-d652-4980-a314-33666ff25b8b.gif)
+## Video example
+Click on the following image in order to view a video:
+
+[![Watch this Video on YouTube](https://i.ytimg.com/vi/cfNfpHcqrQM/mqdefault.jpg)](https://www.youtube.com/watch?v=cfNfpHcqrQM)
 
 ## Usage
 
