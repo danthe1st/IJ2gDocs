@@ -4,7 +4,7 @@
     const createIframe = (attribs) => {
         const ret = document.createElement("iframe");
         for (const name in attribs) {
-            ret.setAttrib(name, attribs[name])
+            ret.setAttribute(name, attribs[name])
         }
         return ret
     }
