@@ -3,6 +3,12 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+### Added
+- A notification is shown when mirroring is started/stopped
+
+### Changed
+- The mirror button is enabled whenever a project is visible and not after indexes are updated/loaded
+- A different text is shown in order to disable mirroring
 
 ## [1.1.0]
 ### Added
