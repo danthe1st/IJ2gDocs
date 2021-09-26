@@ -3,6 +3,8 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+
+## [1.2.0]
 ### Added
 - A notification is shown when mirroring is started/stopped
 
@@ -14,14 +16,14 @@
 ### Added
 - Plugin signing
 
+### Added
+- Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
+
 ### Changed
 - Using submodules for common Google API code
 - Update dependencies
 
 ## [1.1.0]
-### Added
-- Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
-
 ### Changed
 - Only rewrite modified parts instead of the whole document (if possible)
 - Update dependencies
