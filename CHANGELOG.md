@@ -3,6 +3,8 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+### Changed
+- Update dependencies
 
 ## [1.2.0]
 ### Added
@@ -15,16 +17,10 @@
 ## [1.1.0]
 ### Added
 - Plugin signing
-
-### Added
 - Allow to reset OAuth2 authorization in Settings (`Settings`>`Tools`>`IJ2gDocs`)
 
 ### Changed
 - Using submodules for common Google API code
-- Update dependencies
-
-## [1.1.0]
-### Changed
 - Only rewrite modified parts instead of the whole document (if possible)
 - Update dependencies
 
