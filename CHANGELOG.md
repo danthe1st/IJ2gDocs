@@ -5,6 +5,7 @@
 ## [Unreleased]
 ### Changed
 - Update dependencies
+- Send multiple requests to the Google Document in batch
 
 ## [1.2.0]
 ### Added
