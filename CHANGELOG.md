@@ -3,6 +3,8 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+
+## [1.2.1]
 ### Changed
 - Update dependencies
 - Send multiple requests to the Google Document in batch
