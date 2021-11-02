@@ -31,7 +31,7 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           submodules: 'recursive'
 
@@ -55,7 +55,7 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           submodules: 'recursive'
 
@@ -103,7 +103,7 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           submodules: 'recursive'
 
@@ -168,7 +168,7 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           submodules: 'recursive'
 
@@ -219,7 +219,7 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           submodules: 'recursive'
 
