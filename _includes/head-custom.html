@@ -28,8 +28,7 @@
                 if (parent?.tagName === "P" && prev?.tagName === "P") {
                     prev.remove()
                     const videoFrame = createIframe({
-                        width: "560",
-                        height: "315",
+                        "class": "yt-iframe",
                         src: "https://www.youtube.com/embed/"+link.href.substr(ytlinkPrefix.length),
                         title: "YouTube video player",
                         frameborder: "0",
@@ -46,3 +45,10 @@
         replaceVideos()
     }, false);
 </script>
+<style>
+    .yt-iframe{
+        max-width: 95%;
+        width: 560px;
+        height: 315px;
+    }
+</style>
