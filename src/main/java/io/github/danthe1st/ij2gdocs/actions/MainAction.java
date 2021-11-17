@@ -49,7 +49,7 @@ public class MainAction extends AnAction implements DumbAware {
 
 		} catch(GeneralSecurityException | IOException ex) {
 			String errorMessage = ex instanceof IOException ? PluginBundle.message("gDocsIOE") : PluginBundle.message("gDocsSecurityException");
-			errorMessage += ex.getMessage() != null ? ex.getMessage() : ex.getClass().getSimpleName();
+			errorMessage += getExceptionShortMessage(ex);
 			notifyError(project, errorMessage);
 			log.warn(errorMessage, ex);
 		}
@@ -89,9 +89,13 @@ public class MainAction extends AnAction implements DumbAware {
 			try {
 				editorHandler.setDocument(null);
 			} catch(IOException e) {
-				e.printStackTrace();
+				notifyError(null,PluginBundle.message("gDocsIOE")+getExceptionShortMessage(e));
 			}
 		}
 		editorHandler=null;
+	}
+
+	private String getExceptionShortMessage(Exception e){
+		return e.getMessage() != null ? e.getMessage() : e.getClass().getSimpleName();
 	}
 }
