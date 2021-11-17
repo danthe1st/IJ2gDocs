@@ -3,6 +3,8 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+### Changed
+- Update dependencies
 
 ## [1.2.1]
 ### Changed
