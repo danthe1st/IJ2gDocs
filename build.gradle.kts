@@ -64,10 +64,6 @@ tasks {
         targetCompatibility = "11"
     }
 
-    //withType<Detekt> {
-    //    jvmTarget = "1.8"
-    //}
-
     patchPluginXml {
         version.set(properties("pluginVersion"))
         sinceBuild.set(properties("pluginSinceBuild"))
