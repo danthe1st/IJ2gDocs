@@ -29,7 +29,7 @@ dependencies {
     implementation("com.google.http-client:google-http-client-jackson2:1.41.2")
     implementation("com.google.oauth-client:google-oauth-client:1.33.1")
     implementation("com.google.oauth-client:google-oauth-client-jetty:1.33.1")
-    implementation("com.google.oauth-client:google-oauth-client-java6:1.33.0")
+    implementation("com.google.oauth-client:google-oauth-client-java6:1.33.1")
 }
 
 // Configure gradle-intellij-plugin plugin.
