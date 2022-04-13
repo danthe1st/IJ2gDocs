@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 ### Changed
+- Support IDEA 2022.1
 - Update dependencies
 
 ## [1.2.1]
