@@ -3,6 +3,8 @@
 # IJ2GDocs Changelog
 
 ## [Unreleased]
+
+## [1.2.3]
 ### Changed
 - Support IDEA 2022.2
 - Update dependencies
