@@ -26,7 +26,7 @@ dependencies {
     implementation("com.google.api-client:google-api-client-gson:1.35.0")
     implementation("com.google.apis:google-api-services-docs:v1-rev20220602-1.32.1")
     implementation("com.google.http-client:google-http-client:1.41.8")
-    implementation("com.google.http-client:google-http-client-jackson2:1.41.8")
+    implementation("com.google.http-client:google-http-client-jackson2:1.42.0")
     implementation("com.google.oauth-client:google-oauth-client:1.34.0")
     implementation("com.google.oauth-client:google-oauth-client-jetty:1.34.0")
     implementation("com.google.oauth-client:google-oauth-client-java6:1.34.0")
