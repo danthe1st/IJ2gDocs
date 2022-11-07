@@ -21,7 +21,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation("com.google.api-client:google-api-client:1.35.0")
+    implementation("com.google.api-client:google-api-client:2.0.1")
     implementation("com.google.api-client:google-api-client-java6:1.35.0")
     implementation("com.google.api-client:google-api-client-gson:1.35.0")
     implementation("com.google.apis:google-api-services-docs:v1-rev20220602-1.32.1")
